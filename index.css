@@ -1,0 +1,32 @@
+body{
+    background-color: rgb(37, 37, 37);
+    color: white;
+    height: 200vh;
+}
+b {
+    /*color: #fa89d3;*/
+    color: #89d8fa;
+}
+/*
+nav{ 
+    width: 90vw;
+}
+*/
+.navTop
+{
+    
+}
+nav{
+    position: sticky;
+    top: 0;
+}
+.popu {
+    background-color: red;
+    width: 90vw;
+    height: 30vh;
+}
+.cartelera {
+    background-color: green;
+    width: 90vw;
+    height: 30vh;
+}

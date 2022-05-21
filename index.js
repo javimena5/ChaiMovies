@@ -19,26 +19,31 @@ document.addEventListener("DOMContentLoaded",async function()
 */
 
 
-const buttonsWrapper = document.querySelector(".botones");
-const slides = document.querySelector(".inner");
+const carousels = document.querySelectorAll(".popu, .cartelera, .extras")
+console.log(carousels)
+carousels.forEach(car=> {
+  const buttonsWrapper = car.querySelector(".map .botones");
+  const slides = car.querySelector(".inner");
 
-buttonsWrapper.addEventListener("click", function( e ) {
-  if (e.target.nodeName === "BUTTON") {
-    Array.from(buttonsWrapper.children).forEach(item =>
-      item.classList.remove("active")
-    );
-    if (e.target.classList.contains("first")) {
-      slides.style.transform = "translateX(-0%)";
-      e.target.classList.add("active");
-    } else if (e.target.classList.contains("second")) {
-      slides.style.transform = "translateX(-33.33333333333333%)";
-      e.target.classList.add("active");
-    } else if (e.target.classList.contains('third')){
-      slides.style.transform = 'translatex(-66.6666666667%)';
-      e.target.classList.add('active');
+  buttonsWrapper.addEventListener("click", function( e ) {
+    if (e.target.nodeName === "BUTTON") {
+      Array.from(buttonsWrapper.children).forEach(item =>
+        item.classList.remove("active")
+      );
+      if (e.target.classList.contains("first")) {
+        slides.style.transform = "translateX(-0%)";
+        e.target.classList.add("active");
+      } else if (e.target.classList.contains("second")) {
+        slides.style.transform = "translateX(-33.33333333333333%)";
+        e.target.classList.add("active");
+      } else if (e.target.classList.contains('third')){
+        slides.style.transform = 'translatex(-66.6666666667%)';
+        e.target.classList.add('active');
+      }
     }
-  }
+  });
 });
+
 
 
 window.onscroll = function() {scrollFunction()};

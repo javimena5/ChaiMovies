@@ -8,14 +8,6 @@ document.addEventListener("DOMContentLoaded",async function()
     console.log(películas)
 });
 
-
-  window.addEventListener("onscroll",async function() {
-    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-      document.querySelector("nav").style.backgroundColor = "yellow";
-    } else {
-      document.getElementById("nav").style.width = "90vw";
-    }
-  });
 */
 
 

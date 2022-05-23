@@ -1,3 +1,7 @@
+:root {
+    --detalles: #ff9100;
+    --detallesClaro: #ffa835;
+}
 body {
     background-color: rgb(37, 37, 37);
     color: white;
@@ -13,11 +17,6 @@ main {
 
 body::-webkit-scrollbar {
     display: none;
-}
-
-b {
-    /*color: #fa89d3;*/
-    color: #89d8fa;
 }
 
 header {
@@ -47,7 +46,7 @@ nav {
 }
 
 a {
-    color: rgb(255, 145, 0);
+    color: var(--detalles);
 }
 
 h3 {
@@ -59,44 +58,15 @@ header h3{
     margin-right: 0;
 }
 h3::first-letter {
-    color: rgb(255, 145, 0);
-}
-
-.popu, .extras, .cartelera{
-    
+    color: var(--detalles);
 }
 
 footer {
     width: 100%;
     height: 20vh;
-    background-color: rgb(255, 145, 0);
+    background-color: var(--detalles);
 }
 
-[class="btn btn-primary me-3"] {
-    background-color: rgb(255, 145, 0);
-    border: none;
-}
-
-[class="btn btn-primary me-3"]:hover {
-    background-color: rgb(224, 172, 0);
-    border: none;
-}
-
-[class="btn btn-link px-3 me-2"] {
-    color: rgb(37, 37, 37);
-}
-
-[class="btn btn-link px-3 me-2"]:hover {
-    color: rgb(255, 145, 0);
-}
-
-
-
-
-constantes {
-    --bgBlue: #001d38;
-    --cardBlue: #0a2640;
-}
 
 .center {
     align-items: center;
@@ -130,18 +100,15 @@ constantes {
 }
 
 .card>img {
-    border-top-right-radius: inherit;
-    border-top-left-radius: inherit;
+    border-radius: inherit;
     display: block;
     width: 100%;
     height: 100%;
 }
 
 .card>.content {
-    border-bottom-left-radius: inherit;
-    border-bottom-right-radius: inherit;
-    padding: 1em;
-    text-align: center;
+    background-color: red !important;
+    color: black !important;
 }
 
 .map {
@@ -162,7 +129,7 @@ constantes {
 
 .map>.botones>button {
     all: unset;
-    background-color: rgb(255, 145, 0);
+    background-color: var(--detalles);
     height: 1rem;
     width: 1rem;
     cursor: pointer;
@@ -174,20 +141,14 @@ constantes {
     width: 1rem;
 }
 
-.map>.botones>button.active:after {
-    background-color: #ffffff;
-    content: "";
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    border-radius: 100%;
-    height: 0.5rem;
-    width: 0.5rem;
+button[class*="active"]{
+    transition: width 0.2s ease-in-out !important;
+    width: 2rem !important;
+    border-radius: 1rem 1rem 1rem 1rem !important;
+    background-color: var(--detallesClaro) !important;
 }
-
 .VerMas {
-    background-color: rgb(255, 145, 0);
+    background-color: var(--detalles);
     color: white;
     border: none;
     height: 1.5rem;
@@ -198,5 +159,5 @@ constantes {
     text-justify: center;
 }
 .VerMas:hover {
-    background-color: rgb(255, 145, 0);
+    background-color: var(--detalles);
 }

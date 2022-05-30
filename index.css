@@ -91,7 +91,7 @@ footer {
 .wrapper {
     display: flex;
     overflow: hidden;
-    width: 50vw;
+    width: 66vw;
 }
 
 .wrapper>.inner {
@@ -103,7 +103,7 @@ footer {
 
 .card {
     height: 38vh;
-    width: 27vh;
+    width: 25vh;
     border-radius: 0.5em;
 }
 
@@ -120,6 +120,7 @@ footer {
 }
 
 .map {
+    width: 80vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -160,15 +161,14 @@ button[class*="active"]{
     /* background-color: var(--detallesClaro) !important; */
 }
 .VerMas {
-    color: white;
+    color: var(--detalles);
+    text-align: center;
     border: 2;
-    height: 1.5rem;
-    width: 1.5rem;
+    width: 3vh;
+    height: 3vh;
+    padding: 2px 2px 2px 2px;
     border-radius: 8px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     background-color: var(--fondoWeb) !important;
     border: var(--detalles) 2px solid !important;
 }

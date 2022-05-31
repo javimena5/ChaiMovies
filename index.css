@@ -1,5 +1,5 @@
 :root {
-    --detalles: #ff9100;
+    --detalles: #1ac369;
     --detallesClaro: #ffb14b;
     --fondoWeb: #252525;
 }
@@ -37,7 +37,7 @@ header {
     background-color: rgba(255, 255, 255, 0.87);
     transition: all 0.5s ease;
 }
-nav {
+header nav {
     transition: all 0.5s ease;
     align-items: center;
     display: flex;
@@ -46,7 +46,7 @@ nav {
     width: 100vw;
 }
 
-a {
+main a, header a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -57,7 +57,7 @@ a:hover {
     color: white;
 }
 
-h3 {
+header h3 {
     margin-top: 1rem;
 }
 header h3{
@@ -65,14 +65,31 @@ header h3{
     margin: 0;
     margin-right: 0;
 }
-h3::first-letter {
+header h3::first-letter {
     color: var(--detalles);
 }
 
 footer {
     width: 100%;
     height: 20vh;
+    margin-top: 1rem;
+}
+footer section:first-child {
     background-color: var(--detalles);
+}
+
+footer hr {
+    width: 70px;
+    background-color: var(--detalles);
+    height: 3px;
+}
+
+footer span {
+    font-weight: bold;
+}
+a 
+{
+    text-decoration: none;
 }
 
 
@@ -101,20 +118,20 @@ footer {
 }
 
 
-.card {
+.center .card {
     height: 38vh;
     width: 25vh;
     border-radius: 0.5em;
 }
 
-.card>img {
+.center .card>img {
     border-radius: inherit;
     display: block;
     width: 100%;
     height: 100%;
 }
 
-.card>.content {
+.center .card>.content {
     background-color: red !important;
     color: black !important;
 }

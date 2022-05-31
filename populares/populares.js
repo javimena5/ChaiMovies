@@ -29,20 +29,20 @@ async function getPeliculas(page = 1) {
   const response = await fetch(`${API_BASE_URL}movie/popular?api_key=${API_KEY}&page=${page}`)
   const responseData = await response.json()
   data = responseData?.results
-  console.log(data[0])
+  console.log(data)
   pintaPelicula(data)
 
 }
 
 function pintaPelicula(peliculas){
   let i = 0;
-  while(i < 8){
+  while(i < 20){
     var pelicula = new Pelicula(IMAGE_BASE_URL+peliculas[i].poster_path,peliculas[i].title,peliculas[i].release_date,peliculas[i].vote_average);
     console.log(peliculas[i])
     let cadena = "<div class=\"pelicula\"> <img class=\"portada\" src=\""+pelicula.imgUrl+"\">"
     cadena += "<span>"+pelicula.puntos+"</span>"
     cadena += "<div class=\"titulo\">"+pelicula.titulo+"</div>"
-    document.querySelector("main").innerHTML += cadena;
+    document.querySelector(".contenido").innerHTML += cadena;
     i++;
   }
 }

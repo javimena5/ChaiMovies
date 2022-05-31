@@ -56,12 +56,7 @@ main {
 }
 
 .contenido img:hover + span{
-    padding: 16px;
     font-size: 2rem;
-}
-
-.contenido img:hover + .titulo{
-    font-size: larger;
 }
 
 .pelicula span{

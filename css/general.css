@@ -60,7 +60,19 @@ header li{
 .menu ul{
     margin-left: 20rem;
 }
+#registro{
+    transition: all ease-in-out 0.5s;
+    background-color: white !important;
+    color: var(--detalles);
+    border: 2px solid var(--detalles);
+}
+
+#registro:hover {
+    background-color: var(--detallesClaro) !important;
+    color: white;
+}
 .menu button{
+    border: 2px solid var(--detalles) !important;
     margin-right: 2rem;
     background-color: var(--detalles);
     font-weight: bold;
@@ -68,6 +80,7 @@ header li{
     border: 0;
 }
 .menu button:hover{
+    border: 2px solid var(--detallesClaro) !important;
     background-color: var(--detallesClaro);
 }
 .menu ul li a

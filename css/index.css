@@ -1,6 +1,6 @@
 :root {
     --detalles: #1ac369;
-    --detallesClaro: #ffb14b;
+    --detallesClaro: #36df85;
     --fondoWeb: #252525;
 }
 body {
@@ -20,57 +20,6 @@ main {
 body::-webkit-scrollbar {
     display: none;
 }
-
-header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    min-width: 100vw;
-    position: sticky;
-    top: 0;
-    z-index:1000;
-}
-.scrollNav {
-    margin-top: 1vh;
-    width: 90vw !important;
-    border-radius: 1rem;
-    background-color: rgba(255, 255, 255, 0.904);
-    transition: all 0.5s ease;
-    border: 4px solid var(--detalles);
-}
-header nav {
-    transition: all 0.5s ease;
-    align-items: center;
-    display: flex;
-    background-color: white;
-    height: 7.5vh;
-    width: 100vw;
-}
-
-main a, header a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    font-weight: bolder;
-}
-a:hover {
-    color: white;
-}
-
-header h3 {
-    margin-top: 1rem;
-}
-header h3{
-    color: black;
-    margin: 0;
-    margin-right: 0;
-}
-header h3::first-letter {
-    color: var(--detalles);
-}
-
 main h3::first-letter{
     color: var(--detalles);
 }
@@ -79,7 +28,13 @@ a
 {
     text-decoration: none;
 }
-
+main a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: bolder;
+}
 
 .center {
     align-items: center;
@@ -109,6 +64,7 @@ a
 .center .card {
     height: 38vh;
     width: 25vh;
+    border: 2px var(--detallesClaro) solid;
     border-radius: 0.5em;
 }
 
@@ -178,5 +134,5 @@ button[class*="active"]{
     border: var(--detalles) 2px solid !important;
 }
 .VerMas:hover {
-    background-color: var(--detalles);
+    color: white;
 }

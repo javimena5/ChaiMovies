@@ -18,9 +18,9 @@ class Pelicula
 
 function scrollFunction() {
   if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
-    document.querySelector("nav").className = "scrollNav";
+    document.querySelector("nav").id = "scrollNav";
   } else {
-    document.querySelector("nav").className = "";
+    document.querySelector("nav").id = "";
   }
 }
 

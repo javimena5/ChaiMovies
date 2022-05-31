@@ -100,11 +100,6 @@ main {
     background-color: var(--detallesClaro);
 }
 
-#navbarTogglerDemo02 ul
-{
-    margin-left: 13rem;
-}
-
 main button
 {
     background-color: var(--detallesClaro);

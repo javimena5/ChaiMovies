@@ -16,7 +16,7 @@ class Pelicula
 }
 
 const carousels = document.querySelectorAll(".popu, .cartelera, .extras")
-console.log(carousels)
+//console.log(carousels)
 carousels.forEach(car=> {
   const buttonsWrapper = car.querySelector(".map .botones");
   const slides = car.querySelector(".inner");
@@ -61,9 +61,8 @@ async function getPeliculas(page = 1) {
   const response = await fetch(`${API_BASE_URL}movie/popular?api_key=${API_KEY}&page=${page}`)
   const responseData = await response.json()
   data = responseData?.results
-  console.log(data[0])
+  //console.log(data[0])
   pintaPelicula(data)
-
 }
 
 function pintaPelicula(peliculas){
@@ -74,8 +73,25 @@ function pintaPelicula(peliculas){
     i++;
   }
 }
-console.log
+//Cartelera
+async function getCartelera(page = 1) {
+  let data = []
+  const response = await fetch(`${API_BASE_URL}movie/now_playing?api_key=${API_KEY}&language=es-ES&page=${page}`)
+  const responseData = await response.json()
+  data = responseData?.results
+  console.log(data)
+  pintaPeliculaCartelera(data)
+}
+function pintaPeliculaCartelera(peliculas){
+  let i = 0;
+  while(i < 20){
+    var pelicula = new Pelicula(IMAGE_BASE_URL+peliculas[i].poster_path,peliculas[i].title,peliculas[i].release_date,peliculas[i].vote_average);
+    document.querySelector(".cartelera .inner").innerHTML += "<div class=\"card\"> <img src=\""+pelicula.imgUrl+"\"></div>"
+    i++;
+  }
+}
 getPeliculas( document.querySelectorAll(".popu img"));
+getCartelera();
 
 
 

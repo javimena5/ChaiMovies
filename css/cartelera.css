@@ -99,3 +99,39 @@ main {
 .orden:hover{
     background-color: var(--detallesClaro);
 }
+
+#navbarTogglerDemo02 ul
+{
+    margin-left: 13rem;
+}
+
+main button
+{
+    background-color: var(--detallesClaro);
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    margin-bottom: 2rem;
+    height: 5vh;
+    font-weight: bold;
+}
+main button:hover
+{
+    background-color: var(--detalles);
+}
+.ir-arriba {
+    visibility: hidden;
+	padding:20px;
+	background:var(--detalles);
+	font-size:20px;
+	color:#fff;
+	cursor:pointer;
+	position: fixed;
+	bottom:20px;
+	right:20px;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

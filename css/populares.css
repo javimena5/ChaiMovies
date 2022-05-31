@@ -51,7 +51,6 @@ h3::first-letter {
 }
 
 .contenido{
-    margin-top: 2rem;
     display:flex;
     flex-wrap: wrap;
     align-items: center;
@@ -63,10 +62,9 @@ h3::first-letter {
     width: 11.9vw;
     height: 17.8vw;
     border: var(--detalles) solid 2px ;
-    
     margin: 2rem;
     margin-bottom: 6rem;
-    margin-top: 0px !important;
+    margin-top: 1.4rem;
     transition: all ease-in-out 0.3s;
 }
 

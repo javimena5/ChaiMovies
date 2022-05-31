@@ -55,10 +55,10 @@ function scrollFunction() {
   }
 }
 
-
+//Populares
 async function getPeliculas(page = 1) {
   let data = []
-  const response = await fetch(`${API_BASE_URL}movie/popular?api_key=${API_KEY}&page=${page}`)
+  const response = await fetch(`${API_BASE_URL}movie/popular?api_key=${API_KEY}&language=es-ES&page=${page}`)
   const responseData = await response.json()
   data = responseData?.results
   //console.log(data[0])
@@ -90,8 +90,27 @@ function pintaPeliculaCartelera(peliculas){
     i++;
   }
 }
-getPeliculas( document.querySelectorAll(".popu img"));
+
+//Proximas
+async function getProximas(page = 1) {
+  let data = []
+  const response = await fetch(`${API_BASE_URL}movie/upcoming?api_key=${API_KEY}&language=es-ES&page=${page}`)
+  const responseData = await response.json()
+  data = responseData?.results
+  console.log(data)
+  pintaPeliculaProxima(data)
+}
+function pintaPeliculaProxima(peliculas){
+  let i = 0;
+  while(i < 20){
+    var pelicula = new Pelicula(IMAGE_BASE_URL+peliculas[i].poster_path,peliculas[i].title,peliculas[i].release_date,peliculas[i].vote_average);
+    document.querySelector(".extras .inner").innerHTML += "<div class=\"card\"> <img src=\""+pelicula.imgUrl+"\"></div>"
+    i++;
+  }
+}
+getPeliculas();
 getCartelera();
+getProximas();
 
 
 

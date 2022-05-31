@@ -1,6 +1,7 @@
 :root {
-    --detalles: #ff9100;
-    --detallesClaro: #ffa835;
+    --detalles: #1ac369;
+    --detallesClaro: #36df85;
+    --fondoWeb: #252525;
 }
 
 body {
@@ -82,33 +83,54 @@ h3::first-letter {
     font-weight: bolder;
 }
 
-img{
+.contenido img{
     width: 100%;
     height: 100%;
 }
 
-span{
+.contenido span{
     position: static;
     margin-left: -1vw;
-    background-color: var(--detallesClaro);
     padding: 10px;
     border-radius: 100%;
     border: 2px white solid;
+    color: white;
+    font-weight: bolder;
 }
 
-a {
+.rojo {
+    background-color: rgb(255, 17, 17);
+}
+.naranja {
+    background-color: rgb(233, 124, 51);
+}
+.amarillo {
+    background-color: rgb(224, 183, 0);
+}
+.verde {
+    background-color: var(--detalles);
+}
+
+header a {
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     font-weight: bolder;
 }
-footer {
-    width: 100%;
-    height: 20vh;
-    position:relative;
-    padding: 0 0 1rem 0;
-    margin-bottom: 0;
-    margin-top: 5vh;
+
+.orden {
+    margin-top: 1rem;
+    font-weight: bold;
+    padding: 1rem 3rem;
+    border: 0;
+    border-radius: 0.4rem;
+    appearance: none;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 250ms;
     background-color: var(--detalles);
+}
+
+.orden:hover{
+    background-color: var(--detallesClaro);
 }

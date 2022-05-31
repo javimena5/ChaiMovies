@@ -26,7 +26,7 @@ function scrollFunction() {
 
 async function getPeliculas(page = 1) {
   let data = []
-  const response = await fetch(`${API_BASE_URL}movie/popular?api_key=${API_KEY}&page=${page}`)
+  const response = await fetch(`${API_BASE_URL}movie/popular?api_key=${API_KEY}&language=es-ES&page=${page}`)
   const responseData = await response.json()
   data = responseData?.results
   console.log(data)
@@ -34,17 +34,62 @@ async function getPeliculas(page = 1) {
 
 }
 
+async function getPeliculasBuenas(page = 1,mayor) {
+  let data = []
+  const response = await fetch(`${API_BASE_URL}movie/popular?api_key=${API_KEY}&language=es-ES&page=${page}`)
+  const responseData = await response.json()
+  data = responseData?.results
+  if(mayor == 1) pintaPelicula(data.sort(compareMayor))
+  else pintaPelicula(data.sort(compareMenor))
+
+}
+
 function pintaPelicula(peliculas){
   let i = 0;
   while(i < 20){
-    var pelicula = new Pelicula(IMAGE_BASE_URL+peliculas[i].poster_path,peliculas[i].title,peliculas[i].release_date,peliculas[i].vote_average);
+    const nota = parseFloat(peliculas[i].vote_average).toFixed(1);
+    var pelicula = new Pelicula(IMAGE_BASE_URL+peliculas[i].poster_path,peliculas[i].title,peliculas[i].release_date,nota);
     console.log(peliculas[i])
     let cadena = "<div class=\"pelicula\"> <img class=\"portada\" src=\""+pelicula.imgUrl+"\">"
-    cadena += "<span>"+pelicula.puntos+"</span>"
+    if(nota<4.5) cadena += "<span class=\"rojo\">"+pelicula.puntos+"</span>"
+    else if(nota<6) cadena += "<span class=\"naranja\">"+pelicula.puntos+"</span>"
+    else if(nota<8) cadena += "<span class=\"amarillo\">"+pelicula.puntos+"</span>"
+    else cadena += "<span class=\"verde\">"+pelicula.puntos+"</span>"
     cadena += "<div class=\"titulo\">"+pelicula.titulo+"</div>"
     document.querySelector(".contenido").innerHTML += cadena;
     i++;
   }
 }
+
+function compareMayor(a,b) {
+  if (a.vote_average < b.vote_average)
+     return 1;
+  if (a.vote_average > b.vote_average)
+    return -1;
+  return 0;
+}
+
+function compareMenor(a,b) {
+  if (a.vote_average < b.vote_average)
+     return -1;
+  if (a.vote_average > b.vote_average)
+    return 1;
+  return 0;
+}
+
+function ordenaYPinta(){
+
+}
+
+let clicks = 0;
+document.querySelector(".orden").addEventListener("click", function(){
+  clicks++;
+  document.querySelector(".contenido").innerHTML = "";
+  if(clicks==1) getPeliculasBuenas("",1)
+  else if(clicks==2) getPeliculasBuenas("",0)
+  else if(clicks>2) {
+    getPeliculas(); clicks=0;
+  }
+},true);
 
 getPeliculas();

@@ -2,9 +2,7 @@
     --detalles: #ff9100;
     --detallesClaro: #ffa835;
 }
-main {
-    height: 100vh;
-}
+
 body {
     display: flex;
     flex-direction: column;
@@ -51,12 +49,12 @@ h3::first-letter {
     color: var(--detalles);
 }
 
-main{
-    display: inline-flex;
+.contenido{
+    margin-top: 2rem;
+    display:flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    min-height: fit-content;
     width: 80vw;
 }
 
@@ -64,7 +62,9 @@ main{
     width: 11.9vw;
     height: 17.8vw;
     border: var(--detalles) solid 2px ;
-    margin: 3rem;
+    
+    margin: 2rem;
+    margin-bottom: 6rem;
     margin-top: 0px !important;
     transition: all ease-in-out 0.3s;
 }

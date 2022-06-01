@@ -86,6 +86,10 @@ main {
 .verde {
     background-color: var(--detalles);
 }
+.nada {
+    color: transparent !important;
+    border: transparent !important;
+}
 
 .manejaWeb .orden {
     width: 20vh;

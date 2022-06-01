@@ -5,8 +5,9 @@ const API_KEY = '294eb45bf7bff7680030e60e8372c815';
 
 class Pelicula 
 {
-    constructor(imgUrl,titulo,fecha,puntos)
+    constructor(id,imgUrl,titulo,fecha,puntos)
     {
+        this.id = id;
         this.imgUrl = imgUrl;
         this.titulo = titulo;
         this.fecha = fecha;
@@ -74,8 +75,8 @@ async function getPeliculas(page = 1) {
 function pintaPelicula(peliculas){
   let i = 0;
   while(i < 20){
-    var pelicula = new Pelicula(IMAGE_BASE_URL+peliculas[i].poster_path,peliculas[i].title,peliculas[i].release_date,peliculas[i].vote_average);
-    document.querySelector(".popu .inner").innerHTML += "<div class=\"card\"> <img src=\""+pelicula.imgUrl+"\"></div>"
+    var pelicula = new Pelicula(peliculas[i].id,IMAGE_BASE_URL+peliculas[i].poster_path,peliculas[i].title,peliculas[i].release_date,peliculas[i].vote_average);
+    document.querySelector(".popu .inner").innerHTML += "<a class=\"card\" href=\"https://www.themoviedb.org/movie/"+peliculas[i].id+"\"> <img src=\""+pelicula.imgUrl+"\"></a>"
     i++;
   }
 }
@@ -91,8 +92,7 @@ async function getCartelera(page = 1) {
 function pintaPeliculaCartelera(peliculas){
   let i = 0;
   while(i < 20){
-    var pelicula = new Pelicula(IMAGE_BASE_URL+peliculas[i].poster_path,peliculas[i].title,peliculas[i].release_date,peliculas[i].vote_average);
-    document.querySelector(".cartelera .inner").innerHTML += "<div class=\"card\"> <img src=\""+pelicula.imgUrl+"\"></div>"
+    var pelicula = new Pelicula(peliculas[i].id,IMAGE_BASE_URL+peliculas[i].poster_path,peliculas[i].title,peliculas[i].release_date,peliculas[i].vote_average);    document.querySelector(".cartelera .inner").innerHTML += "<a class=\"card\" href=\"https://www.themoviedb.org/movie/"+peliculas[i].id+"\"> <img src=\""+pelicula.imgUrl+"\"></a>"
     i++;
   }
 }
@@ -109,8 +109,7 @@ async function getProximas(page = 1) {
 function pintaPeliculaProxima(peliculas){
   let i = 0;
   while(i < 20){
-    var pelicula = new Pelicula(IMAGE_BASE_URL+peliculas[i].poster_path,peliculas[i].title,peliculas[i].release_date,peliculas[i].vote_average);
-    document.querySelector(".extras .inner").innerHTML += "<div class=\"card\"> <img src=\""+pelicula.imgUrl+"\"></div>"
+    var pelicula = new Pelicula(peliculas[i].id,IMAGE_BASE_URL+peliculas[i].poster_path,peliculas[i].title,peliculas[i].release_date,peliculas[i].vote_average);    document.querySelector(".extras .inner").innerHTML += "<a class=\"card\" href=\"https://www.themoviedb.org/movie/"+peliculas[i].id+"\"> <img src=\""+pelicula.imgUrl+"\"></a>"
     i++;
   }
 }

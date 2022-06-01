@@ -64,10 +64,15 @@ main a{
 .center .card {
     height: 38vh;
     width: 25vh;
-    border: 2px var(--detallesClaro) solid;
+    border: 2px var(--detalles) solid;
     border-radius: 0.5em;
+    transition: all 0.1s ease-in-out;
 }
 
+.center .card:hover{
+    border: 2px white solid;
+    cursor: pointer;
+}
 .center .card>img {
     border-radius: inherit;
     display: block;

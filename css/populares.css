@@ -15,6 +15,9 @@ body::-webkit-scrollbar {
     display: none;
 }
 main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     min-height: 100vh;
 }
 
@@ -84,18 +87,66 @@ main {
     background-color: var(--detalles);
 }
 
-.orden {
+.manejaWeb .orden {
+    width: 20vh;
     margin-top: 1rem;
     font-weight: bold;
     padding: 1rem 3rem;
-    border: 0;
+    border: 2px transparent solid;
     border-radius: 0.4rem;
     appearance: none;
     cursor: pointer;
-    transition: background 0.2s, box-shadow 250ms;
+    transition: all ease-in-out 0.15s;
+    background-color: var(--detalles);
+    z-index: 77;
+    margin-left: 20vh;
+}
+.manejaWeb .orden:hover{
+    border: 2px white solid;
     background-color: var(--detalles);
 }
 
-.orden:hover{
+.manejaWeb{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+}
+.navegaPag {
+    margin-left: -22.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+}
+.anterior, .siguiente {
+    margin: 1vh;
+    height: fit-content;
+    width: fit-content;
+    border-radius: 0.4rem;
+    background-color: var(--fondoWeb);
+    border: 2px white solid;
+    padding-left: 1rem;
+}
+
+.anterior svg, .siguiente svg{
+    fill: var(--detalles);
+}
+
+.anterior:hover, .siguiente:hover {
     background-color: var(--detallesClaro);
 }
+
+.anterior:hover svg, .siguiente:hover svg{
+    fill: var(--fondoWeb);
+}
+
+.navega {
+    margin-top: 1rem;
+    width: 77vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+

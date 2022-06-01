@@ -22,7 +22,7 @@ header nav {
     align-items: center;
     display: flex;
     background-color: white;
-    border-bottom: 4px solid var(--detalles);
+    border-bottom: 5px solid var(--detalles);
     height: 7.5vh;
     width: 100vw;
 }
